@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/upcoming.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(94, 210, 245);
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.438);
+            width: calc(100%-30vw);
+            height: 90%;
+            display: flex;
+            border-radius: 30px;
+            z-index: 5;
+        }
+        
+        aside {
+            z-index: 3;
+            height: 100%;
+            width: 300px;
+            display: flex;
+            border-radius: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.623);
+        }
+        
+        main {
+            height: 100%;
+            width: 70%;
+        }
+        
+        .profile {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgb(68, 126, 180);
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 100;
+        }
+        
+        .profile h3 {
+            font-family: 'Ramabhadra', sans-serif;
+            font-weight: 900;
+            font-size: calc(10px + .9vw);
+        }
+        
+        .profile p {
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 100;
+            font-size: calc(10px + .3vw);
+        }
+        
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            height: 40%;
+            color: rgb(68, 126, 180);
+        }
+        
+        .menu-element {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-weight: 100;
+            font-size: calc(10px + .3vw);
+        }
+        
+        .menu-element img {
+            margin: 0 20px;
+        }
+        
+        .block {
+            height: 30%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 900;
+        }
+        
+        .box p {
+            font-size: cacl(10px + .3vw);
+            line-height: 30px;
+        }
+        
+        .box {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: #fff;
+            padding-left: 20px;
+            border-radius: 20px;
+            background-color: rgb(94, 210, 245);
+            text-align: center;
+        }
+        
+        .box img {
+            height: 110px;
+            position: relative;
+            top: -6px;
+        }
+        
+        main {
+            padding: 10px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: rgb(68, 126, 180);
+            z-index: 3;
+        }
+        
+        main h1 {
+            font-family: 'Ramabhadra', sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+        }
+        
+        .game-card {
+            max-height: 110px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.74);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.082);
+        }
+        
+        .game-card img {
+            height: 80px;
+        }
+        
+        .game-card .description {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            margin-left: 10px;
+        }
+        
+        .value {
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            font-family: 'Ramabhadra', sans-serif;
+            font-weight: 900;
+            color: rgba(52, 136, 204, 0.288);
+            font-size: 23px;
+            position: relative;
+            top: -12px;
+        }
+        
+        .description h3 {
+            font-family: 'Ramabhadra', sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 25px;
+            color: rgb(102, 166, 219);
+        }
+        
+        .description p {
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 100;
+        }
+        
+        progress {
+            color: rgb(58, 157, 238);
+            height: 50px;
+        }
+        
+        .container::before {
+            content: ' ';
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 11%;
+            background-color: rgba(255, 255, 255, 0.596);
+            z-index: 0;
+            align-self: flex-end;
+            border-radius: 50%;
+        }
+        
+        .container::after {
+            content: ' ';
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            bottom: 52%;
+            right: 15%;
+            background-color: rgba(255, 255, 255, 0.596);
+            z-index: 0;
+            align-self: flex-end;
+            border-radius: 50%;
+        }
+        
+        .btn {
+            display: none;
+        }
+        
+        .desingB {
+            border-radius: 20px;
+            height: 40px;
+            width: 300px;
+            position: relative;
+            top: -30px;
+            background-color: rgba(255, 255, 255, 0.514);
+        }
+        
+        @media screen and (max-width:800px) {
+            aside {
+                width: 10vh;
+                height: 10vh;
+                align-items: center;
+                justify-content: center;
+                color: rgb(0, 140, 255);
+                font-weight: 900;
+                font-size: 25px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            .container {
+                width: 90%;
+            }
+            .game-card {
+                width: 100%;
+            }
+            .container::after,
+            .container::before {
+                height: 200px;
+                width: 200px;
+            }
+            .container::after {
+                bottom: 70%;
+                right: 2%;
+            }
+            .container::before {
+                top: 70%;
+                left: 2%;
+            }
+            main {
+                width: 90%;
+                align-items: center;
+            }
+            .profile {
+                display: none;
+            }
+            .menu {
+                display: none;
+            }
+            .block {
+                display: none;
+            }
+            .btn {
+                display: block;
+            }
+        }
+    </style>
+    <title>Active Games</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <aside>
+                <div class="btn">&#9776;</div>
+                <div class="profile">
+                    <img src="./images/avatar.png" alt="avatar" class="avatar">
+                    <h3 class="name">Simo Edwin</h3>
+                    <p>Pro Member</p>
+                </div>
+                <div class="menu">
+                    <div class="menu-element">
+                        <img src="./images/twitch.png" alt="twitch">
+                        <p>Streams</p>
+                    </div>
+
+                    <div class="menu-element">
+                        <img src="./images/steam.png" alt="steam">
+                        <p>Games</p>
+                    </div>
+
+                    <div class="menu-element">
+                        <img src="./images/upcoming.png" alt="upcoming">
+                        <p>New</p>
+                    </div>
+
+                    <div class="menu-element">
+                        <img src="./images/library.png" alt="library">
+                        <p>Library</p>
+                    </div>
+
+                </div>
+                <div class="block">
+                    <div class="box">
+                        <p>Join pro <br> for free <br> games.</p>
+                        <img src="./images/controller.png" alt="controller">
+                    </div>
+                </div>
+            </aside>
+            <main>
+                <h1>Active Games</h1>
+                <div class="desingB"></div>
+                <div class="game-card">
+                    <img src="./images/assassins.png" alt="assassins">
+                    <div class="description">
+                        <h3>Assassins creed valhalla</h3>
+                        <p>PS 5 Version</p>
+                        <progress value="0.9"></progress>
+                    </div>
+                    <span class="value">90%</span>
+                </div>
+
+                <div class="game-card">
+                    <img src="./images/sackboy.png" alt="assassins">
+                    <div class="description">
+                        <h3>Sackboy a great advanture</h3>
+                        <p>PS 5 Version</p>
+                        <progress value="0.56"></progress>
+                    </div>
+                    <span class="value">56%</span>
+                </div>
+
+                <div class="game-card">
+                    <img src="./images/spiderman.png" alt="assassins">
+                    <div class="description">
+                        <h3>Spiderman Miles Morales</h3>
+                        <p>PS 5 Version</p>
+                        <progress value="0.2"></progress>
+                    </div>
+                    <span class="value">20%</span>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
